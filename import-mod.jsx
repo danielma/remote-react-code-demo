@@ -8,8 +8,8 @@ export function configure(configuration) {
 
 export function Tasks({ config, explode }) {
   React.useEffect(() => {
-    config.configuredFetch("/home/v2/tasks")
-  }, [config.configuredFetch])
+    config?.configuredFetch("/home/v1/tasks")
+  }, [])
 
   return (
     <div
