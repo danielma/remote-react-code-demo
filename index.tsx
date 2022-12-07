@@ -18,6 +18,10 @@ function App() {
         <ErrorBoundary>
           <Tasks config={{ configuredFetch: () => void 0 }} />
         </ErrorBoundary>
+
+        <ErrorBoundary>
+          <Tasks explode />
+        </ErrorBoundary>
       </React.Suspense>
     </div>
   );

@@ -6,8 +6,10 @@ export function configure(configuration) {
   console.log(configuration.version);
 }
 
-export function Tasks(props) {
-  console.log(props);
+export function Tasks({ config, explode }) {
+  React.useEffect(() => {
+    config.configuredFetch("/home/v2/tasks")
+  }, [config.configuredFetch])
 
   return (
     <div
@@ -20,7 +22,8 @@ export function Tasks(props) {
       <ul>
         <li>An Item!</li>
       </ul>
-      {children}
+
+      {explode && aVariableThatDoesntExist}
     </div>
   );
 }
