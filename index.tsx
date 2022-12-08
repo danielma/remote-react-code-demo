@@ -1,9 +1,13 @@
 import * as React from "react";
+import * as ReactDOM from 'react-dom'
 import { createRoot } from "react-dom/client";
 import ErrorBoundary from "./error-boundary";
 
+window.React = React
+window.ReactDOM = ReactDOM
+
 const Tasks = React.lazy(() =>
-  import("http://127.0.0.1:8001/js/import-mod.js").then((Mod) => {
+  import("http://127.0.0.1:8002/js/import-mod.js").then((Mod) => {
     Mod.configure({ React, version: "8.3.2" });
     return Mod;
   })
